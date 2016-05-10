@@ -1,0 +1,23 @@
+# data only container pattern
+datadev:
+  image: muccg/debian8-base
+  volumes:
+    - .:/app
+    - ./data/dev:/data
+
+db:
+  image: mdillon/postgis:9.5
+  environment:
+    - POSTGRES_USER=ckan
+    - POSTGRES_PASSWORD=ckan
+  ports:
+    - 5432
+
+solr:
+  image: solr:5.4.1
+  ports:
+    - 8983:8983
+    
+cache:
+  image: memcached:1.4
+

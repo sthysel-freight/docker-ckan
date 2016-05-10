@@ -1,0 +1,11 @@
+FROM debian:jessie
+
+MAINTAINER sthysel <sthysel@gmail.com>
+ENV REFRESHED_AT 2016-05-09
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      software-properties-common python-software-properties \
+      python-dev \
+      postgresql \
+      libpq-dev \
+      python-virtualenv
